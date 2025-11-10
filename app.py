@@ -54,7 +54,7 @@ df, moda_cols = load_data()
 
 bulan_nama = ["Januari","Februari","Maret","April","Mei","Juni",
               "Juli","Agustus","September","Oktober","November","Desember"]
-df["Bulan_Nama"] = df["Date"].dt.month_name(locale='id')
+df["Bulan_Nama"] = df["Date"].dt.month.apply(lambda x: bulan_nama[x-1])
 
 
 # SIDEBAR
